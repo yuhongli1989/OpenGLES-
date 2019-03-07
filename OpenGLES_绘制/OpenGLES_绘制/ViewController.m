@@ -75,7 +75,7 @@ const char fShaderStr[] =
     };
     
     static const GLushort vertex_indices[] = {
-        0,1,2,1,2,3
+        0,1,2,2,1,3
     };
     //配置顶点数组
     glGenVertexArrays(1, &vao);
@@ -126,7 +126,7 @@ const char fShaderStr[] =
     glBindVertexArray(vao);
     
     if (isPoint) {
-        glDrawElements ( GL_TRIANGLES, 6, GL_UNSIGNED_SHORT, ( const void * ) 0 );
+        glDrawElements ( GL_TRIANGLE_STRIP, 6, GL_UNSIGNED_SHORT, ( const void * ) 0 );
     }else{
         glDrawArrays(GL_TRIANGLES, 0, 3);
     }
